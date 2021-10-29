@@ -32,5 +32,17 @@ namespace LocalBusinessClient.Controllers
       await Business.Put(business);
       return RedirectToAction("Details", id);
     }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(Business business)
+    {
+      await Business.Post(business);
+      return RedirectToAction("Index");
+    }
   }
 }
