@@ -23,5 +23,15 @@ namespace LocalBusinessClient.Models
 
       return businesses;
     }
+
+    public static Business GetDetails(int id)
+    {
+      var apiCall = ApiHelper.Get(id);
+      string result = apiCall.Result;
+       JArray jasonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      Business business = JsonConvert.DeserializeObject<Business>(jasonResponse.ToString());
+
+      return business;
+    }
   }
 }
