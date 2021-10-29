@@ -33,5 +33,21 @@ namespace LocalBusinessClient.Models
 
       return business;
     }
+
+    public async static Task Post(Business business)
+    {
+      string jsonBusiness = JsonConvert.SerializeObject(business);
+      await ApiHelper.Post(jsonBusiness);
+    }
+    public async static Task Put(Business business)
+    {
+      string jsonBusiness = JsonConvert.SerializeObject(business);
+      await ApiHelper.Put(business.BusinessId, jsonBusiness);
+    }
+
+    public async static Task Delete(int id)
+    {
+      await ApiHelper.Delete(id);
+    }
   }
 }

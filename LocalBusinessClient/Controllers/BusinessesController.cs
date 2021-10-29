@@ -18,5 +18,19 @@ namespace LocalBusinessClient.Controllers
       var business = Business.GetDetails(id);
       return View(business);
     }
+
+    public IActionResult Edit(int id)
+    {
+      var business = Business.GetDetails(id);
+      return View(business);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Details(int id, Business business)
+    {
+      business.BusinessId = id;
+      await Business.Put(business);
+      return RedirectToAction("Details", id);
+    }
   }
 }
