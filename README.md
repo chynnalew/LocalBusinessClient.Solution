@@ -1,9 +1,9 @@
 # Local Business Client MVC
-
+***
 #### An ASP.NET Core MVC created to accompany the [Local Business API](https://github.com/chynnalew/LocalBusiness.Solution)
 
 #### Created By: Chynna Lew 
-
+***
 ## Technologies Used
 
 * C#
@@ -13,11 +13,11 @@
 * Entity Framework Core
 * Bootstrap
 * CSS
-
+***
 ## Description
 
 This application was created to accompany the [Local Business API](https://github.com/chynnalew/LocalBusiness.Solution). This MVC allows the user to access the API's full CRUD functionality in the browser.
-
+***
 ## Setup and Usage Instructions
 
 ### Technology Requirements
@@ -44,16 +44,16 @@ This application was created to accompany the [Local Business API](https://githu
     - Run the command `$ dotnet run` to build and compile the project
     - The ASP.NET Core MVC is viewable in the browser at http://localhost:5004 
     - If the styling is not appearing in the browser, open http://localhost:5004 in an incognito browser or clear your browser cache
-
+***
 ## Known Bugs
 
 * none at this time
-
+***
 ### License
 
 [MIT License](https://opensource.org/licenses/MIT)
 Copyright 2021 Chynna Lew
-
+***
 ## Support and contact details
 
 * [Chynna Lew](github.com/chynnalew) 
