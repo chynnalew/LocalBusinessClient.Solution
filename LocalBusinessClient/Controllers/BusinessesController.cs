@@ -44,5 +44,18 @@ namespace LocalBusinessClient.Controllers
       await Business.Post(business);
       return RedirectToAction("Index");
     }
+
+    public ActionResult Delete(int id)
+    {
+      var business = Business.GetDetails(id);
+      return View(business);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public async Task<IActionResult> DeleteConfirm(int id)
+    {
+      await Business.Delete(id);
+      return RedirectToAction("Index");
+    }
   }
 }

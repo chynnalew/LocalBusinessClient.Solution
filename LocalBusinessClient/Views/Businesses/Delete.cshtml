@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model LocalBusinessClient.Models.Business;
+
+<h2>Are you sure you want to delete @Model.Name?</h2>
+<br>
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" class="btn btn-warning"/>
+}
+<br>
+@Html.ActionLink("Cancel this action", "Details", new{ id = @Model.BusinessId}, new{@class="btn btn-outline-secondary"})
