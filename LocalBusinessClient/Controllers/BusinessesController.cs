@@ -12,5 +12,11 @@ namespace LocalBusinessClient.Controllers
       var allBusinesses = Business.GetBusinesses().OrderBy(model => model.Name);
       return View(allBusinesses);
     }
+
+    public IActionResult Details(int id)
+    {
+      var business = Business.GetDetails(id);
+      return View(business);
+    }
   }
 }

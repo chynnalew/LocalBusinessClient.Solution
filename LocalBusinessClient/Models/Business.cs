@@ -28,7 +28,7 @@ namespace LocalBusinessClient.Models
     {
       var apiCall = ApiHelper.Get(id);
       string result = apiCall.Result;
-       JArray jasonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      JObject jasonResponse = JsonConvert.DeserializeObject<JObject>(result);
       Business business = JsonConvert.DeserializeObject<Business>(jasonResponse.ToString());
 
       return business;

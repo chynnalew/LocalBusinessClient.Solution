@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+@model LocalBusinessClient.Models.Business;
+
+<div class="card">
+  <h3>@Model.Name</h3>
+  <ul>
+    <li class="small-text">@Model.Genre @Model.Type</li>
+    <li>Address: @Model.Address</li>
+      @if(Model.Price == 1 || Model.Price == 2)
+      {
+        <li>Price: Inexpensive</li>
+      }
+      else if (Model.Price == 3)
+      {
+        <li>Price: Moderate</li>
+      }
+      else if (Model.Price == 4 || Model.Price == 5)
+      {
+        <li>Price: Expensive</li>
+      }
+  </ul>
+  <p>@Model.Description</p>
+</div>
+<br>
+@Html.ActionLink("Edit This Business", "Update", new{ id = @Model.BusinessId}, new{@class="btn btn-outline-secondary"})
+<br>
+@Html.ActionLink("Delete This Business", "Delete", new{ id = @Model.BusinessId}, new{@class="btn btn-outline-secondary"})
