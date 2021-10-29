@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+
+@using LocalBusinessClient.Models;
+
+<h1>All Entries</h1>
+
+<ul>
+@foreach (Business business in Model)
+{
+  @Html.ActionLink(@business.Name, "Details", "Businesses", new {id = $"{business.BusinessId}"})
+  <p class="small-text">@business.Genre @business.Type</p>
+  <ul>
+    <li>Address: @business.Address</li>
+      @if(business.Price == 1 || business.Price == 2)
+      {
+        <li>Price: Inexpensive</li>
+      }
+      else if (business.Price == 3)
+      {
+        <li>Price: Moderate</li>
+      }
+      else if (business.Price == 4 || business.Price == 5)
+      {
+        <li>Price: Expensive</li>
+      }
+  </ul>
+  <br>
+}
+</ul>

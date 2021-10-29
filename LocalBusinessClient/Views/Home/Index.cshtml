@@ -2,30 +2,22 @@
   Layout = "_Layout";
 }
 
-@using LocalBusinessClient.Models;
-
-<h1>All Entries</h1>
-
-<ul>
-@foreach (Business business in Model)
-{
-  <p><em><strong>@business.Name</strong></em></p>
-  <p>@business.Genre @business.Type</p>
+<h1>Welcome to the Portland, Oregon Local Businesses API MVC</h1>
+<p>This API contians local portland Restaurants, Food Carts, and Shops</p>
+<hr>
+<h3>How to use this API MVC:</h3>
+<p>The Local Businesses API must be running to use this site. Please download the API here:<a href="https://github.com/chynnalew/LocalBusiness.Solution"> https://github.com/chynnalew/LocalBusiness.Solution</a> and follow the instructions in the README.md file.</p>
+<hr>
+<p>GET(all businesses): Click "Businesses" in the nav-bar to view all entires in the API, or navigate to this url: <a href="http://localhost:5003/Businesses/Home">http://localhost:5003/Businesses/Home</a></p>
+<p>GET(individual businesses): Click on any business name to view all details about that business, or navigate to "http://localhost:5000/Businesses/Details/business-id" (replace business-id with the id number) if you know the Id for the business you would like to view</p>
+<p>POST: Click the "Add" button in the nav-bar or navigate to this url to add a new business to the database: <a href="http://localhost:5003/Businesses/Create">http://localhost:5003/Businesses/Create</a></p>
+<p>PUT: Click the "Edit this Business" button on the details page to edit an entry in the database, or navigate to "http://localhost:5000/Businesses/Edit/business-id" (replace business-id with the id number) if you know the id of the business you would like to edit</p>
+<p>DELETE: Click the "Delete this Business" button on the business details page to permentaely delete the business, or navigate to "http://localhost:5000/Businesses/Delete/business-id" (replace business-id with the id number) if you know the id of the business you would like to delete</p>
+<p>GET(search): Click "Search" in the nav-bar to search for a specific entry, or entires by property. The following properites are queryable: 
   <ul>
-    <li>Address: @business.Address</li>
-      @if(business.Price == 1 || business.Price == 2)
-      {
-        <li>Price: Inexpensive</li>
-      }
-      else if (business.Price == 3)
-      {
-        <li>Price: Moderate</li>
-      }
-      else if (business.Price == 4 || business.Price == 5)
-      {
-        <li>Price: Expensive</li>
-      }
+    <li>"Name" : The specific name of the business</li>
+    <li>"Type" : The type of business <br> Current Types: Restaurant, Food Cart, Shop</li>
+    <li>"Genre" : The specific theme of the business <br> Current Genres: Mexican, Thai, Russian, Levanese, Korean, Music, Game, Thrift/Vintage, Tattoo</li>
+    <li>"Price" : How expensive the goods are <br>Scaled from 1 to 5 where 1 = inexpensive and 5 = expensive</li>
   </ul>
-  <br>
-}
-</ul>
+</p>
