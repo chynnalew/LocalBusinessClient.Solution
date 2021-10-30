@@ -49,5 +49,16 @@ namespace LocalBusinessClient.Models
     {
       await ApiHelper.Delete(id);
     }
+
+    public static List<Business> Search(string name, string type, string genre, int price)
+    {
+      var apiCallTask = ApiHelper.Search(name, type, genre, price);
+      string result = apiCallTask.Result;
+
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Business> list = JsonConvert.DeserializeObject<List<Business>>(jsonResponse.ToString());
+
+      return list;
+    }
   }
 }

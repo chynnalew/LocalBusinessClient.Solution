@@ -57,5 +57,16 @@ namespace LocalBusinessClient.Controllers
       await Business.Delete(id);
       return RedirectToAction("Index");
     }
+    public ActionResult Search()
+    {
+      return View();
+    }
+
+    public IActionResult SearchResults(string name, string type, string genre, int price)
+    {
+      
+      var searchResults = Business.Search(name, type, genre, price);
+      return View(searchResults);
+    }
   }
 }

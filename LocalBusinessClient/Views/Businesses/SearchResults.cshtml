@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+@using LocalBusinessClient.Models;
+
+<h1>Search Results</h1>
+@if(Model.Count == 0)
+{
+  <p>No businesses matching this query</p>
+}
+<ul>
+@foreach (Business business in Model)
+{
+  <div class="card">
+    @Html.ActionLink(@business.Name, "Details", "Businesses", new {id = $"{business.BusinessId}"})
+    <ul>
+      <li class="small-text">@business.Genre @business.Type</li>
+      <li>Address: @business.Address</li>
+        @if(business.Price == 1 || business.Price == 2)
+        {
+          <li>Price: Inexpensive</li>
+        }
+        else if (business.Price == 3)
+        {
+          <li>Price: Moderate</li>
+        }
+        else if (business.Price == 4 || business.Price == 5)
+        {
+          <li>Price: Expensive</li>
+        }
+    </ul>
+  </div>
+  <br>
+}
+</ul>
